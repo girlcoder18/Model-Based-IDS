@@ -1,0 +1,60 @@
+Start terminal 1
+Run commands
+	source ~/catkin_ws/devel/setup.bash
+	export ROS_IP=192.168.3.210
+	export ROS_MASTER_URI=http://192.168.3.210:11311
+	cd catkin_ws
+	catkin_make
+
+When you run catkin_make, some packages are broken, just go to home/catkin_ws/src
+and delete those broken packages. I think the folder with issues is called robot_robot just delete it.
+When catkin_make brings an error it usually shows which directory has a problem..delete the folder in src with the error.
+let me know if you fail to find them.
+After you delete the broken packages
+After you delete the broken packages just copy and paste the folders robot_0, robot_1, robot_2
+into the directory home/catkin_ws/src. Then run these commands:
+	cd catkin_ws
+	catkin_make
+	roscore
+The catkin_make command has to be run in the catkin_ws directory
+
+
+Start terminal 2
+Run commands
+	source ~/catkin_ws/devel/setup.bash
+	export ROS_IP=192.168.3.210
+	export ROS_MASTER_URI=http://192.168.3.210:11311
+	roslaunch robots bots_3.launch //launches the three simulated robots
+
+After launching the simulated robots, you can run them directly from Simulink
+by just executing one model after the other.
+
+Since it is simulated robots, they dont have IP address so to run the C++ files,
+Make sure you stop the simulink models before running these:
+Start terminal 3
+Run commands
+	source ~/catkin_ws/devel/setup.bash
+	export ROS_IP=192.168.3.210
+	export ROS_MASTER_URI=http://192.168.3.210:11311
+	rosrun robot_0 robot_0_node
+
+Start terminal 4
+Run commands
+	source ~/catkin_ws/devel/setup.bash
+	export ROS_IP=192.168.3.210
+	export ROS_MASTER_URI=http://192.168.3.210:11311
+	rosrun robot_1 robot_1_node
+
+Start terminal 5
+Run commands
+	source ~/catkin_ws/devel/setup.bash
+	export ROS_IP=192.168.3.210
+	export ROS_MASTER_URI=http://192.168.3.210:11311
+	rosrun robot_2 robot_2_node
+
+
+
+
+
+	
+

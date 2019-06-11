@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>  
+<node name="robot_node"
+pkg="robot"type="robot_node"/>
+</node>
+</launch>

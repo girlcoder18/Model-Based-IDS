@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>  
+<group ns="robot_2">
+<node name="robot_node"
+pkg="robot"type="robot_node"/>
+</group>
+</node>
+</launch>
